@@ -7,7 +7,7 @@ const uuidv4 = require("uuid/v4");
 
 const insert_user_record = 'INSERT INTO users.amt20 (workid, uniquecode, problemset) VALUES (?, ?, ?)';
 const select_user_record = 'SELECT * FROM users.amt20 where workid = ?'
-const update_seqid = 'UPDATE users.amt20 SET seqid = ? where userid = ?';
+const update_seqid = 'UPDATE users.amt20 SET seqid = ? where workid = ?';
 const insert_choice = 'INSERT INTO users.choices (workid, pid, c) VALUES (?, ?, ?)';
 
 const total_tasks = 98
@@ -92,15 +92,7 @@ app.get('/api/makeselection/:id/:sid/:s/:pid', cors(), (req, res, next) =>{
     console.log(req.params.s);
     console.log(req.params.sid);
     var sid = req.params.sid
-    con.query(select_user_record, [req.params.id], (err, results, fields) => {
-        if(results.length == 0){
-            res.send('ok')
-        } else {
-            if(sid != results[0].seqid){
-                res.send('ok')
-            }
-        }
-    })
+
     let nextid = (parseInt(req.params.sid) + 1).toString()
     con.query(update_seqid, 
         [nextid, req.params.id], (err, results, fields) =>{
@@ -116,7 +108,9 @@ app.get('/api/getuniquecode/:id', cors(), (req, res, next) =>{
         if(parseInt(results[0].seqid) != task_num_per_person){
             res.json({uniqueCode:'0'})
         } else {
+            console.log('unique sent')
             res.json({uniqueCode:results[0].uniqueCode})
+            
         }
     })
 })
