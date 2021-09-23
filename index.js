@@ -109,6 +109,7 @@ app.get('/api/getuniquecode/:id', cors(), (req, res, next) =>{
             res.json({uniqueCode:'0'})
         } else {
             console.log('unique sent')
+            console.log(results[0].uniqueCode)
             res.json({uniqueCode:results[0].uniqueCode})
             
         }
