@@ -94,11 +94,10 @@ app.get('/api/makeselection/:id/:sid/:s/:pid', cors(), (req, res, next) =>{
     var sid = req.params.sid
     con.query(select_user_record, [req.params.id], (err, results, fields) => {
         if(results.length == 0){
-            res.status(400).end()
+            res.send('ok')
         } else {
             if(sid != results[0].seqid){
-                console.log(results[0])
-                res.status(400).end()
+                res.send('ok')
             }
         }
     })
