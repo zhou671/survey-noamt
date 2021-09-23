@@ -10,7 +10,7 @@ const select_user_record = 'SELECT * FROM users.amt20 where workid = ?'
 const update_seqid = 'UPDATE users.amt20 SET seqid = ? where userid = ?';
 const insert_choice = 'INSERT INTO users.choices (workid, pid, c) VALUES (?, ?, ?)';
 
-const total_tasks = 100
+const total_tasks = 98
 const task_num_per_person = 20
 const pid_length = 5
 
@@ -91,13 +91,14 @@ app.get('/api/makeselection/:id/:sid/:s/:pid', cors(), (req, res, next) =>{
     console.log(req.params.id);
     console.log(req.params.s);
     console.log(req.params.sid);
-    
+    var sid = req.params.sid
     con.query(select_user_record, [req.params.id], (err, results, fields) => {
         if(results.length == 0){
-            res.send('fail')
+            res.status(400).end()
         } else {
-            if(req.params.sid != results[0].seqid){
-                res.send('fail')
+            if(sid != results[0].seqid){
+                console.log(results[0])
+                res.status(400).end()
             }
         }
     })
@@ -106,7 +107,7 @@ app.get('/api/makeselection/:id/:sid/:s/:pid', cors(), (req, res, next) =>{
         [nextid, req.params.id], (err, results, fields) =>{
     });
     con.query(insert_choice, 
-        [req.params.id, pid, s], (err, results, fields) =>{
+        [req.params.id, req.params.pid, req.params.s], (err, results, fields) =>{
     });
     res.send('ok');
 });
