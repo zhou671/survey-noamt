@@ -96,7 +96,7 @@ app.get('/api/checkuser/:id', cors(), (req, res, next) => {
 });
 
 app.get('/api/makeselection/:id/:sid/:s/:pid', cors(), (req, res, next) =>{
-    res.send('ok');
+    res.send('ok'); 
     // console.log(req.params.id);
     // console.log(req.params.s);
     // console.log(req.params.sid);
