@@ -3,7 +3,7 @@ const mysql = require('mysql');
 const path = require('path');
 const app = express();
 const cors = require('cors');
-//const uuidv4 = require("uuid/v4");
+const uuidv4 = require("uuid/v4");
 
 const insert_user_record = 'INSERT INTO users.amt20 (workid, uniquecode, problemset) VALUES (?, ?, ?)';
 const select_user_record = 'SELECT * FROM users.amt20 where workid = ?'
@@ -59,71 +59,62 @@ function takeFirst(){
 }
 
 app.get('/api/checkuser/:id', cors(), (req, res, next) => {
-    // console.log(req.params.id);
-    // con.query(select_user_record, [req.params.id], (err, results, fields) =>{
-    //     if(results.length == 0){
-    //         let fn = takeFirst()
-    //         let unique_code = uuidv4()
-    //         let insert_field = [req.params.id, unique_code, toproblemset(fn)]
-    //         con.query(insert_user_record, 
-    //             insert_field,
-    //             (err, results, fields) =>{
-    //                 res.json(
-    //                     {
-    //                         nextId: '0',
-    //                         fileName: fn
-    //                     });
-    //             })
-    //     } else{
-    //         console.log(results[0].seqid);
-    //         let fn = tofn(results[0].problemset, parseInt(results[0].seqid))
-    //         let seqid = parseInt(results[0].seqid)
-    //         res.json(
-    //             {
-    //                 nextId: results[0].seqid,
-    //                 fileName: fn
-    //             });
-    //     }
-    // });
-    var fn = []
-    for(let i = 0; i < 99; i++){
-        fn.push(i.toString())
-    }
-    res.json({
-        nextid: '0',
-        fileName: fn
-    })
+    console.log(req.params.id);
+    con.query(select_user_record, [req.params.id], (err, results, fields) =>{
+        if(results.length == 0){
+            let fn = takeFirst()
+            let unique_code = uuidv4()
+            let insert_field = [req.params.id, unique_code, toproblemset(fn)]
+            con.query(insert_user_record, 
+                insert_field,
+                (err, results, fields) =>{
+                    res.json(
+                        {
+                            nextId: '0',
+                            fileName: fn
+                        });
+                })
+        } else{
+            console.log(results[0].seqid);
+            let fn = tofn(results[0].problemset, parseInt(results[0].seqid))
+            let seqid = parseInt(results[0].seqid)
+            res.json(
+                {
+                    nextId: results[0].seqid,
+                    fileName: fn
+                });
+        }
+    });
+
 });
 
 app.get('/api/makeselection/:id/:sid/:s/:pid', cors(), (req, res, next) =>{
-    res.send('ok');
-    // console.log(req.params.id);
-    // console.log(req.params.s);
-    // console.log(req.params.sid);
-    // var sid = req.params.sid
+    console.log(req.params.id);
+    console.log(req.params.s);
+    console.log(req.params.sid);
+    var sid = req.params.sid
 
-    // let nextid = (parseInt(req.params.sid) + 1).toString()
-    // con.query(update_seqid, 
-    //     [nextid, req.params.id], (err, results, fields) =>{
-    // });
-    // con.query(insert_choice, 
-    //     [req.params.id, req.params.pid, req.params.s], (err, results, fields) =>{
-    // });
-    // res.send('ok');
+    let nextid = (parseInt(req.params.sid) + 1).toString()
+    con.query(update_seqid, 
+        [nextid, req.params.id], (err, results, fields) =>{
+    });
+    con.query(insert_choice, 
+        [req.params.id, req.params.pid, req.params.s], (err, results, fields) =>{
+    });
+    res.send('ok');
 });
 
 app.get('/api/getuniquecode/:id', cors(), (req, res, next) =>{
-    res.json({uniqueCode:'test_uniqueCode'})
-    // con.query(select_user_record, [req.params.id], (err, results, fields) =>{
-    //     if(parseInt(results[0].seqid) != task_num_per_person){
-    //         res.json({uniqueCode:'0'})
-    //     } else {
-    //         console.log('unique sent')
-    //         console.log(results[0].uniqueCode)
-    //         res.json({uniqueCode:results[0].uniqueCode})
+    con.query(select_user_record, [req.params.id], (err, results, fields) =>{
+        if(parseInt(results[0].seqid) != task_num_per_person){
+            res.json({uniqueCode:'0'})
+        } else {
+            console.log('unique sent')
+            console.log(results[0].uniqueCode)
+            res.json({uniqueCode:results[0].uniqueCode})
             
-    //     }
-    // })
+        }
+    })
 })
 
 app.get('/api/getfile/:filepath', cors(), (req, res, next) =>{
@@ -140,16 +131,16 @@ const PORT = 80;
 app.listen(PORT, () => console.log('server start on port' + PORT));
 
   
-// const con = mysql.createConnection({
-//     host: "localhost",
-//     user: "root",
-//     password: "3243",
-//     port: 3306
-// });
+const con = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "3243",
+    port: 3306
+});
   
-// con.connect(function(err) {
-//     if (err) throw err;
-//     console.log("Connected!");
-// });
+con.connect(function(err) {
+    if (err) throw err;
+    console.log("Connected!");
+});
 
 
