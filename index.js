@@ -11,7 +11,7 @@ const update_seqid = 'UPDATE users.amt20 SET seqid = ? where workid = ?';
 const insert_choice = 'INSERT INTO users.choices (workid, pid, c) VALUES (?, ?, ?)';
 
 const total_tasks = 100
-const task_num_per_person = 20
+const task_num_per_person = 19
 const pid_length = 5
 
 function numToString(num){
@@ -55,7 +55,9 @@ function takeFirst(){
         arr.push((i).toString());
     }
     shuffle(arr);
-    return arr.slice(0, first);
+    let res = arr.slice(0, first);
+    res.push('99')
+    return res;
 }
 
 app.get('/api/checkuser/:id', cors(), (req, res, next) => {
