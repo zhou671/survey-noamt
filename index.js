@@ -10,7 +10,7 @@ const select_user_record = 'SELECT * FROM users.amt20 where workid = ?'
 const update_seqid = 'UPDATE users.amt20 SET seqid = ? where workid = ?';
 const insert_choice = 'INSERT INTO users.choices (workid, pid, c) VALUES (?, ?, ?)';
 
-const total_tasks = 100
+const total_tasks = 99
 const task_num_per_person = 19
 const pid_length = 5
 
