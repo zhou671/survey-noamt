@@ -1,5 +1,0 @@
-/home/zgong8/ShapeNetCore.v2/02876657/2bbd2b37776088354e23e9314af9ae57/models/model_normalized.obj
-<class 'VoxelizeDeformer.VoxelizeDeformer'> {'cubes': 64.0} 
-status: True
-manifold: True
-cut_at: 99

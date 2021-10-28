@@ -1,5 +1,0 @@
-/home/zgong8/ShapeNetCore.v2/03790512/973d75ed9c12836f3d033e6cf82ec72c/models/model_normalized.obj
-<class 'DecimationDeformer.DecimationDeformer'> {'ratio': 3.0} <class 'ARAPDeformer.ARAPDeformer'> {'t_x': 0.9978542741072283, 't_y': 0.5481867550313497, 't_z': 0.9163572081432291, 'theta': 0.7810789792434832, 'phi': 5.27123686846302, 'pivots': 0.616520544773344} <class 'RandomCageDeformer.RandomCageDeformer'> {'t_x': 0.7550327539980329, 't_y': 0.5671956438210668, 't_z': 0.268871379975707, 'theta': 0.39217333019649453, 'phi': 1.4359907320604022, 'pivots': 0.9420092692906649} <class 'SubdivisionDeformer.SubdivisionDeformer'> {'steps': 1} <class 'RandomCageDeformer.RandomCageDeformer'> {'t_x': 0.5502343397950518, 't_y': 0.18852179100351352, 't_z': 0.44220827469492463, 'theta': 0.37030630208572496, 'phi': 5.660081101315276, 'pivots': 0.44366227162799} <class 'ARAPDeformer.ARAPDeformer'> {'t_x': 0.4621311669560205, 't_y': 0.11805082241426379, 't_z': 0.8906301967515823, 'theta': 0.6577230407118, 'phi': 3.350813236028271, 'pivots': 0.2733174872960277} <class 'MarchingCubesDeformer.MarchingCubesDeformer'> {} 
-status: True
-manifold: False
-cut_at: 99

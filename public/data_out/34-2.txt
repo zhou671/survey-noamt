@@ -1,5 +1,0 @@
-/home/zgong8/ShapeNetCore.v2/02880940/d5b3fb99c8084a6c5430c0f7a585e679/models/model_normalized.obj
-<class 'BiharmonicDeformer.BiharmonicDeformer'> {'pivots': 1, 'dis': 1.2, 'first': 0.9543914318972199, 'second': 0.2728062163833197, 'third': 0.2492346768146485, 'fourth': 0.946054179415382} <class 'LengthDeformer.LengthDeformer'> {'x': 0.8635383501110319, 'y': 1.2951458925524741, 'z': 0.7262478855691475} <class 'VoxelizeDeformer.VoxelizeDeformer'> {'cubes': 64.0} 
-status: True
-manifold: True
-cut_at: 99

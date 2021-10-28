@@ -1,6 +1,0 @@
-/home/zgong8/ShapeNetCore.v2/03759954/64af172f468f76a89675998826ae9066/models/model_normalized.obj
-<class 'VoxelizeDeformer.VoxelizeDeformer'> {'cubes': 32.0} <class 'LengthDeformer.LengthDeformer'> {'x': 1.2601363894634943, 'y': 0.6420565575875096, 'z': 0.8655310163377338} <class 'ARAPDeformer.ARAPDeformer'> {'t_x': 0.08558866256406339, 't_y': 0.2963807174627515, 't_z': 0.44900036276123245, 'theta': 1.0470097922536044, 'phi': 0.2240352046748745, 'pivots': 0.7482165819885985} 
-status: True
-score: 3
-manifold: True
-cut_at: 99

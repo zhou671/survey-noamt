@@ -1,6 +1,0 @@
-/home/zgong8/ShapeNetCore.v2/03928116/6a0839a9bd3c10b7f2c5403cbf111281/models/model_normalized.obj
-<class 'RandomCageDeformer.RandomCageDeformer'> {'t_x': 0.3498122619169697, 't_y': 0.7331250898750925, 't_z': 0.5726001255727843, 'theta': 0.35938228090309493, 'phi': 3.873875119446939, 'pivots': 0.7976285202012648} 
-status: True
-score: 1
-manifold: True
-cut_at: 99

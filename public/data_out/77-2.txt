@@ -1,5 +1,0 @@
-/home/zgong8/ShapeNetCore.v2/02747177/18dbebd6527cffa254685f5f473de41f/models/model_normalized.obj
-<class 'RandomCageDeformer.RandomCageDeformer'> {'t_x': 0.7038093815891331, 't_y': 0.269156757334027, 't_z': 0.3622594566701661, 'theta': 0.440611763591218, 'phi': 5.54441331102997, 'pivots': 0.9011296622849532} <class 'RandomCageDeformer.RandomCageDeformer'> {'t_x': 0.5410574351806404, 't_y': 0.8254440440267575, 't_z': 0.4732377008549187, 'theta': 0.4355669234436158, 'phi': 4.915394375911843, 'pivots': 0.05097054218322905} <class 'LengthDeformer.LengthDeformer'> {'x': 0.5188835679864034, 'y': 1.5542498882094353, 'z': 0.6161825413694084} <class 'RandomCageDeformer.RandomCageDeformer'> {'t_x': 0.37162403213726436, 't_y': 0.021491903114646993, 't_z': 0.2500192772954841, 'theta': 0.27289439850102626, 'phi': 0.5383531536964362, 'pivots': 0.24753039569915014} <class 'RandomCageDeformer.RandomCageDeformer'> {'t_x': 0.6655334222871853, 't_y': 0.02189603029182119, 't_z': 0.09791447324867908, 'theta': 0.1382119416257166, 'phi': 1.6285339226893407, 'pivots': 0.8864580483858152} 
-status: True
-manifold: True
-cut_at: 99

@@ -1,6 +1,0 @@
-/home/zgong8/ShapeNetCore.v2/02876657/6da7fa9722b2a12d195232a03d04563a/models/model_normalized.obj
-<class 'DecimationDeformer.DecimationDeformer'> {'ratio': 8.0} <class 'LengthDeformer.LengthDeformer'> {'x': 0.5780235593892051, 'y': 0.976594402449115, 'z': 1.3874484172559667} 
-status: True
-score: 3
-manifold: True
-cut_at: 99

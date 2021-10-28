@@ -1,6 +1,0 @@
-/home/zgong8/ShapeNetCore.v2/04460130/8cf718ed6a5fefd8fcaad7f5ff5ee65c/models/model_normalized.obj
-<class 'PointCloudDeformer.PointCloudDeformer'> {} 
-status: True
-score: 1
-manifold: False
-cut_at: 99

@@ -1,5 +1,0 @@
-/home/zgong8/ShapeNetCore.v2/04330267/27cebdcd07cf90aa500158c23c4c5a8e/models/model_normalized.obj
-<class 'ARAPDeformer.ARAPDeformer'> {'t_x': 0.561635634336075, 't_y': 0.723284411476942, 't_z': 0.8965327858832267, 'theta': 0.6925771399183057, 'phi': 2.6689960423002925, 'pivots': 0.9257007601101646} <class 'ARAPDeformer.ARAPDeformer'> {'t_x': 0.9072541229635973, 't_y': 0.11627261770989206, 't_z': 0.7387542342253494, 'theta': 0.7738919455004315, 'phi': 2.0585344165101374, 'pivots': 0.9700809917365903} 
-status: True
-manifold: True
-cut_at: 99

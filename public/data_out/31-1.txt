@@ -1,6 +1,0 @@
-/home/zgong8/ShapeNetCore.v2/03624134/5c6c271d248294e0e0b68f51ad1c0011/models/model_normalized.obj
-<class 'MarchingCubesDeformer.MarchingCubesDeformer'> {} <class 'SubdivisionDeformer.SubdivisionDeformer'> {'steps': 1} <class 'ARAPDeformer.ARAPDeformer'> {'t_x': 0.3279912087181872, 't_y': 0.13039542724459185, 't_z': 0.8086046734387429, 'theta': 0.2206827249900016, 'phi': 2.473738307793858, 'pivots': 0.29176310557059715} 
-status: True
-score: 2
-manifold: True
-cut_at: 99

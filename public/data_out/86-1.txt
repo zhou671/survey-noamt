@@ -1,6 +1,0 @@
-/home/zgong8/ShapeNetCore.v2/04401088/95e61ab6f817d7ffdf3f86c9fe70c0ad/models/model_normalized.obj
-<class 'ARAPDeformer.ARAPDeformer'> {'t_x': 0.045857846470502506, 't_y': 0.21285752058176854, 't_z': 0.40068306013199984, 'theta': 0.40757168411026096, 'phi': 1.61115080532507, 'pivots': 0.5694647063472023} <class 'DecimationDeformer.DecimationDeformer'> {'ratio': 7.0} <class 'MarchingCubesDeformer.MarchingCubesDeformer'> {} 
-status: True
-score: 3
-manifold: True
-cut_at: 99

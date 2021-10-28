@@ -1,6 +1,0 @@
-/home/zgong8/ShapeNetCore.v2/02773838/6881468dd51c214922022e93ae2b2b5b/models/model_normalized.obj
-<class 'MarchingCubesDeformer.MarchingCubesDeformer'> {} 
-status: True
-score: 1
-manifold: True
-cut_at: 99

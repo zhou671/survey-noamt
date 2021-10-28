@@ -1,6 +1,0 @@
-/home/zgong8/ShapeNetCore.v2/03085013/72d5aad0fbca8996ef04aec0d9ffcd31/models/model_normalized.obj
-<class 'ARAPDeformer.ARAPDeformer'> {'t_x': 0.6442548476960835, 't_y': 0.7060555064194948, 't_z': 0.33467774880317924, 'theta': 0.6886875704590569, 'phi': 5.054235884910298, 'pivots': 0.08341692998203176} <class 'BiharmonicDeformer.BiharmonicDeformer'> {'pivots': 1, 'dis': 1.6, 'first': 0.6779931194592419, 'second': 0.253317794125157, 'third': 0.9394767741789278, 'fourth': 0.5350203763490932} <class 'SubdivisionDeformer.SubdivisionDeformer'> {'steps': 1} <class 'RandomCageDeformer.RandomCageDeformer'> {'t_x': 0.8713317215074903, 't_y': 0.008897945356260428, 't_z': 0.8849785895407225, 'theta': 0.37550820440946087, 'phi': 5.566718193429992, 'pivots': 0.3581509457074997} <class 'RandomCageDeformer.RandomCageDeformer'> {'t_x': 0.8910906719040218, 't_y': 0.42438858232160726, 't_z': 0.12121291088173547, 'theta': 0.13599102960005438, 'phi': 1.759594981021407, 'pivots': 0.47068842627196184} 
-status: True
-score: 3
-manifold: True
-cut_at: 99

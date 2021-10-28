@@ -1,6 +1,0 @@
-/home/zgong8/ShapeNetCore.v2/03593526/eaaa14d9fab71afa5b903ba10d2ec446/models/model_normalized.obj
-<class 'ARAPDeformer.ARAPDeformer'> {'t_x': 0.46633885119164, 't_y': 0.7824998989143672, 't_z': 0.8498406331332273, 'theta': 0.7428971875279656, 'phi': 5.294979736587924, 'pivots': 0.4601011743073571} <class 'RandomCageDeformer.RandomCageDeformer'> {'t_x': 0.149276116347284, 't_y': 0.0727722131920362, 't_z': 0.640473911453115, 'theta': 0.37178744440696354, 'phi': 6.055021353715164, 'pivots': 0.7407999425284082} <class 'LengthDeformer.LengthDeformer'> {'x': 0.8651017934620165, 'y': 0.7729377135697114, 'z': 1.025732260668915} <class 'SubdivisionDeformer.SubdivisionDeformer'> {'steps': 1} <class 'DecimationDeformer.DecimationDeformer'> {'ratio': 6.0} <class 'BiharmonicDeformer.BiharmonicDeformer'> {'pivots': 1, 'dis': 1.6, 'first': 0.6782486937673086, 'second': 0.24362183086415, 'third': 0.7524221242043969, 'fourth': 0.9070720990266199} <class 'ARAPDeformer.ARAPDeformer'> {'t_x': 0.3376211948402533, 't_y': 0.8929473222569302, 't_z': 0.34515667397593064, 'theta': 0.41759711701303487, 'phi': 3.2116533809930465, 'pivots': 0.056090855305224396} 
-status: True
-score: 3
-manifold: True
-cut_at: 99
