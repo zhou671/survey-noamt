@@ -95,6 +95,9 @@ app.get('/api/makeselection/:id/:sid/:s/:pid', cors(), (req, res, next) =>{
     console.log(req.params.s);
     console.log(req.params.sid);
     var sid = req.params.sid
+    if(parseInt(req.params.sid) >= 20){
+        res.send('ok');
+    }
 
     let nextid = (parseInt(req.params.sid) + 1).toString()
     con.query(update_seqid, 
