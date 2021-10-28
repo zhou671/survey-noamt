@@ -1,0 +1,5 @@
+/home/zgong8/ShapeNetCore.v2/04074963/7af8b6f6f78d0eddea30b1080420ecf9/models/model_normalized.obj
+<class 'SubdivisionDeformer.SubdivisionDeformer'> {'steps': 1} <class 'BiharmonicDeformer.BiharmonicDeformer'> {'pivots': 1, 'dis': 1.4, 'first': 0.5777634337892655, 'second': 0.0015800395942551226, 'third': 0.8704161885597923, 'fourth': 0.9439946879596193} 
+status: True
+manifold: True
+cut_at: 99

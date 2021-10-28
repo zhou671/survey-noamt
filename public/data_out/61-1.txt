@@ -1,0 +1,6 @@
+/home/zgong8/ShapeNetCore.v2/02876657/6987e839b802a349a9039b9668d0f11f/models/model_normalized.obj
+<class 'DecimationDeformer.DecimationDeformer'> {'ratio': 8.0} 
+status: True
+score: 2
+manifold: True
+cut_at: 99

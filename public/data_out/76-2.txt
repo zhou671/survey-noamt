@@ -1,0 +1,5 @@
+/home/zgong8/ShapeNetCore.v2/04330267/e4c8385cdd91eec0be8b4a628af8a88c/models/model_normalized.obj
+<class 'PointCloudDeformer.PointCloudDeformer'> {} <class 'ARAPDeformer.ARAPDeformer'> {'t_x': 0.8634922014456357, 't_y': 0.19360708253174386, 't_z': 0.11270651289908196, 'theta': 0.512917307323207, 'phi': 4.06390239776961, 'pivots': 0.0024841658193717198} <class 'ARAPDeformer.ARAPDeformer'> {'t_x': 0.12179267265403293, 't_y': 0.2800670542252788, 't_z': 0.5387420501527597, 'theta': 0.7267164814694619, 'phi': 2.619367806498917, 'pivots': 0.08908069840805866} 
+status: True
+manifold: True
+cut_at: 99

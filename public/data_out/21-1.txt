@@ -1,0 +1,6 @@
+/home/zgong8/ShapeNetCore.v2/04330267/55878303fb7fccc58e4d888a487bbe11/models/model_normalized.obj
+<class 'MarchingCubesDeformer.MarchingCubesDeformer'> {} <class 'BiharmonicDeformer.BiharmonicDeformer'> {'pivots': 1, 'dis': 1.2, 'first': 0.8290700404589982, 'second': 0.8487582372579554, 'third': 0.8501084892617795, 'fourth': 0.48812967607252655} 
+status: True
+score: 1
+manifold: True
+cut_at: 99

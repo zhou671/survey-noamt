@@ -1,0 +1,5 @@
+/home/zgong8/ShapeNetCore.v2/03948459/a2ae72e791228034e209cfa3a83f54c7/models/model_normalized.obj
+<class 'LengthDeformer.LengthDeformer'> {'x': 0.768336475577073, 'y': 0.55487835494413, 'z': 0.5117821977496139} <class 'PointCloudDeformer.PointCloudDeformer'> {} <class 'DecimationDeformer.DecimationDeformer'> {'ratio': 10.0} 
+status: True
+manifold: True
+cut_at: 99

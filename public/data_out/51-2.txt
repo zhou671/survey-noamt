@@ -1,0 +1,5 @@
+/home/zgong8/ShapeNetCore.v2/03211117/9329eb153c1e8b4d8479362ee6ff3679/models/model_normalized.obj
+<class 'SubdivisionDeformer.SubdivisionDeformer'> {'steps': 1} 
+status: True
+manifold: True
+cut_at: 99

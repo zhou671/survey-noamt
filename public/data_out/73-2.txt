@@ -1,0 +1,5 @@
+/home/zgong8/ShapeNetCore.v2/03797390/c39fb75015184c2a0c7f097b1a1f7a5/models/model_normalized.obj
+<class 'MarchingCubesDeformer.MarchingCubesDeformer'> {} <class 'LengthDeformer.LengthDeformer'> {'x': 1.508933385022711, 'y': 0.7855650076076811, 'z': 1.4586357576021407} 
+status: True
+manifold: True
+cut_at: 99
