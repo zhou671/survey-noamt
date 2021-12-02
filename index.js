@@ -73,7 +73,8 @@ app.get('/api/checkuser/:id', cors(), (req, res, next) => {
                     res.json(
                         {
                             nextId: '0',
-                            fileName: fn
+                            fileName: fn,
+                            uniqueCode: unique_code
                         });
                 })
         } else{
@@ -83,7 +84,8 @@ app.get('/api/checkuser/:id', cors(), (req, res, next) => {
             res.json(
                 {
                     nextId: results[0].seqid,
-                    fileName: fn
+                    fileName: fn,
+                    uniqueCode: results[0].uniquecode
                 });
         }
     });
