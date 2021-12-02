@@ -98,7 +98,11 @@ app.get('/api/makeselection/:id/:sid/:s/:pid', cors(), (req, res, next) =>{
     if(parseInt(req.params.sid) >= 20){
         res.send('ok');
     }
-
+    con.query(select_user_record, [req.params.id], (err, results, fields)=>{
+        if(parseInt(results[0].seqid) > sid){
+            res.send('ok');
+        }
+    })
     let nextid = (parseInt(req.params.sid) + 1).toString()
     con.query(update_seqid, 
         [nextid, req.params.id], (err, results, fields) =>{
@@ -114,10 +118,10 @@ app.get('/api/getuniquecode/:id', cors(), (req, res, next) =>{
         if(parseInt(results[0].seqid) != '' + (task_num_per_person + 1)){
             res.json({uniqueCode:'0'})
         } else {
+            console.log(req.params.id)
             console.log('unique sent')
             console.log(results[0].uniqueCode)
             res.json({uniqueCode:results[0].uniqueCode})
-            
         }
     })
 })
