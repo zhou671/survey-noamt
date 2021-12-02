@@ -118,6 +118,7 @@ app.get('/api/getuniquecode/:id', cors(), (req, res, next) =>{
         if(parseInt(results[0].seqid) != '' + (task_num_per_person + 1)){
             res.json({uniqueCode:'0'})
         } else {
+            console.log('from uc api')
             console.log(req.params.id)
             console.log('unique sent')
             console.log(results[0].uniqueCode)
