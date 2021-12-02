@@ -111,7 +111,7 @@ app.get('/api/makeselection/:id/:sid/:s/:pid', cors(), (req, res, next) =>{
 
 app.get('/api/getuniquecode/:id', cors(), (req, res, next) =>{
     con.query(select_user_record, [req.params.id], (err, results, fields) =>{
-        if(parseInt(results[0].seqid) != task_num_per_person){
+        if(parseInt(results[0].seqid) != '' + (task_num_per_person + 1)){
             res.json({uniqueCode:'0'})
         } else {
             console.log('unique sent')
