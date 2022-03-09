@@ -1,0 +1,5 @@
+/home/zgong8/ShapeNetCore.v2/04099429/ca746c12c01a09b58db04a0e4b407440/models/model_normalized.obj
+<class 'RandomCageDeformer.RandomCageDeformer'> {'t_x': 0.5577593009134144, 't_y': 0.33596982800529007, 't_z': 0.23932022377026596, 'theta': 0.322132193048668, 'phi': 2.6266371911972195, 'pivots': 0.2691552317025857} <class 'SubdivisionDeformer.SubdivisionDeformer'> {'steps': 1} 
+status: True
+manifold: True
+cut_at: 99

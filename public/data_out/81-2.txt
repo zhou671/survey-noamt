@@ -1,0 +1,5 @@
+/home/zgong8/ShapeNetCore.v2/02954340/e7e61ccc69e18440a52821bf1aa3b19a/models/model_normalized.obj
+<class 'PointCloudDeformer.PointCloudDeformer'> {} <class 'SubdivisionDeformer.SubdivisionDeformer'> {'steps': 1} 
+status: True
+manifold: False
+cut_at: 0

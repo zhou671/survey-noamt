@@ -1,0 +1,5 @@
+/home/zgong8/ShapeNetCore.v2/02942699/60923e8a6c785a8755a834a7aafb0236/models/model_normalized.obj
+<class 'ARAPDeformer.ARAPDeformer'> {'t_x': 0.7610406745702182, 't_y': 0.856445478311575, 't_z': 0.20019149662754043, 'theta': 0.45511544703320916, 'phi': 2.953648723654719, 'pivots': 0.21119324983202725} <class 'VoxelizeDeformer.VoxelizeDeformer'> {'cubes': 32.0} 
+status: True
+manifold: True
+cut_at: 99

@@ -1,0 +1,6 @@
+/home/zgong8/ShapeNetCore.v2/02818832/8a3240bc541767544b44261aa73cb2d9/models/model_normalized.obj
+<class 'ARAPDeformer.ARAPDeformer'> {'t_x': 0.22382070376951824, 't_y': 0.1453309633812796, 't_z': 0.045186545045014403, 'theta': 0.9278220196802185, 'phi': 5.380362239514421, 'pivots': 0.5650247845335266} <class 'SubdivisionDeformer.SubdivisionDeformer'> {'steps': 1} 
+status: True
+score: 2
+manifold: True
+cut_at: 99

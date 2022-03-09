@@ -86,7 +86,7 @@ app.get('/api/checkuser/:id', cors(), (req, res, next) => {
     //     }
     // });
     var fn = []
-    for(let i = 0; i < 99; i++){
+    for(let i = 0; i < 100; i++){
         fn.push(i.toString())
     }
     res.json({
@@ -96,10 +96,9 @@ app.get('/api/checkuser/:id', cors(), (req, res, next) => {
 });
 
 app.get('/api/makeselection/:id/:sid/:s/:pid', cors(), (req, res, next) =>{
+    console.log(req.params.s);
     res.send('ok'); 
     // console.log(req.params.id);
-    // console.log(req.params.s);
-    // console.log(req.params.sid);
     // var sid = req.params.sid
 
     // let nextid = (parseInt(req.params.sid) + 1).toString()

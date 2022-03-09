@@ -1,0 +1,6 @@
+/home/zgong8/ShapeNetCore.v2/04256520/51ccdee7080b11dde21111e385a0661f/models/model_normalized.obj
+<class 'VoxelizeDeformer.VoxelizeDeformer'> {'cubes': 128.0} <class 'LengthDeformer.LengthDeformer'> {'x': 1.7429079315215033, 'y': 1.1207957515795066, 'z': 0.6768034718317907} <class 'SubdivisionDeformer.SubdivisionDeformer'> {'steps': 1} 
+status: True
+score: 2
+manifold: True
+cut_at: 99

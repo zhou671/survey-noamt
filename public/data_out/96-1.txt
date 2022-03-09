@@ -1,0 +1,6 @@
+/home/zgong8/ShapeNetCore.v2/04330267/287fd6b1b61269907fa354dc1b904bdd/models/model_normalized.obj
+<class 'DecimationDeformer.DecimationDeformer'> {'ratio': 3.0} <class 'SubdivisionDeformer.SubdivisionDeformer'> {'steps': 1} 
+status: True
+score: 1
+manifold: True
+cut_at: 99

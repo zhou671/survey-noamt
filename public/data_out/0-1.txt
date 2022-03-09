@@ -1,0 +1,6 @@
+/home/zgong8/ShapeNetCore.v2/02828884/7792b15f8c598763d2b12aa6a0f050b3/models/model_normalized.obj
+<class 'LengthDeformer.LengthDeformer'> {'x': 0.9762752943734521, 'y': 1.2027640412132328, 'z': 0.5335029987164136} 
+status: True
+score: 1
+manifold: True
+cut_at: 99
