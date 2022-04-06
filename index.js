@@ -5,13 +5,13 @@ const app = express();
 const cors = require('cors');
 const uuidv4 = require("uuid/v4");
 
-const insert_user_record = 'INSERT INTO users.amt20 (workid, uniquecode, problemset) VALUES (?, ?, ?)';
-const select_user_record = 'SELECT * FROM users.amt20 where workid = ?'
-const update_seqid = 'UPDATE users.amt20 SET seqid = ? where workid = ?';
-const insert_choice = 'INSERT INTO users.choices (workid, pid, c) VALUES (?, ?, ?)';
+const insert_user_record = 'INSERT INTO users.amt50 (workid, uniquecode, problemset) VALUES (?, ?, ((select count(*) from users.amt50 subquery) + 1) % 200)';
+const select_user_record = 'SELECT * FROM users.amt50 where workid = ?'
+const update_seqid = 'UPDATE users.amt50 SET seqid = ? where workid = ?';
+const insert_choice = 'INSERT INTO users.choices50 (workid, pid, c) VALUES (?, ?, ?)';
 
-const total_tasks = 99
-const task_num_per_person = 19
+const total_tasks = 10000
+const task_num_per_person = 50
 const pid_length = 5
 
 function numToString(num){
@@ -60,35 +60,71 @@ function takeFirst(){
     return res;
 }
 
+function preparefn(seqid, problemset){
+    let start = (problemset - 1) * 50 + seqid;
+    let end = problemset * 50;
+    let arr = [];
+    for(let i = start; i < end; i++){
+        arr.push((i).toString());
+    }
+    return res;
+}
+
 app.get('/api/checkuser/:id', cors(), (req, res, next) => {
     console.log(req.params.id);
+
+    // con.query(select_user_record, [req.params.id], (err, results, fields) =>{
+    //     if(results.length == 0){
+    //         let fn = takeFirst()
+    //         let unique_code = uuidv4()
+    //         let insert_field = [req.params.id, unique_code, toproblemset(fn)]
+    //         con.query(insert_user_record, 
+    //             insert_field,
+    //             (err, results, fields) =>{
+    //                 res.json(
+    //                     {
+    //                         nextId: '0',
+    //                         fileName: fn,
+    //                         uniqueCode: unique_code
+    //                     });
+    //             })
+    //     } else{
+    //         console.log(results[0].seqid);
+    //         let fn = tofn(results[0].problemset, parseInt(results[0].seqid))
+    //         let seqid = parseInt(results[0].seqid)
+    //         res.json(
+    //             {
+    //                 nextId: results[0].seqid,
+    //                 fileName: fn,
+    //                 uniqueCode: results[0].uniquecode
+    //             });
+    //     }
+    // });
+
+
     con.query(select_user_record, [req.params.id], (err, results, fields) =>{
         if(results.length == 0){
-            let fn = takeFirst()
             let unique_code = uuidv4()
-            let insert_field = [req.params.id, unique_code, toproblemset(fn)]
-            con.query(insert_user_record, 
-                insert_field,
-                (err, results, fields) =>{
-                    res.json(
-                        {
-                            nextId: '0',
-                            fileName: fn,
-                            uniqueCode: unique_code
-                        });
-                })
-        } else{
-            console.log(results[0].seqid);
-            let fn = tofn(results[0].problemset, parseInt(results[0].seqid))
-            let seqid = parseInt(results[0].seqid)
-            res.json(
-                {
-                    nextId: results[0].seqid,
-                    fileName: fn,
-                    uniqueCode: results[0].uniquecode
-                });
-        }
-    });
+            con.query(
+                insert_user_record, 
+                [req.params.id, unique_code],
+                (err, results, fields) => {}
+            )
+        } 
+    })
+
+    con.query(select_user_record, [req.params.id], (err, results, fields) =>{
+        let seqid = parseInt(results[0].seqid)
+        let problemset = results[0].problemset
+        let fn = preparefn(seqid, problemset)
+        res.json(
+            {
+                nextId: results[0].seqid,
+                fileName: fn,
+                uniqueCode: results[0].uniqueCode
+            }
+        )
+    })
 
 });
 
@@ -97,7 +133,7 @@ app.get('/api/makeselection/:id/:sid/:s/:pid', cors(), (req, res, next) =>{
     console.log(req.params.s);
     console.log(req.params.sid);
     var sid = req.params.sid
-    if(parseInt(req.params.sid) >= 20){
+    if(parseInt(req.params.sid) >= 50){
         res.send('ok');
     }
     con.query(select_user_record, [req.params.id], (err, results, fields)=>{
@@ -117,7 +153,7 @@ app.get('/api/makeselection/:id/:sid/:s/:pid', cors(), (req, res, next) =>{
 
 app.get('/api/getuniquecode/:id', cors(), (req, res, next) =>{
     con.query(select_user_record, [req.params.id], (err, results, fields) =>{
-        if(parseInt(results[0].seqid) != '' + (task_num_per_person + 1)){
+        if(parseInt(results[0].seqid) != '' + (task_num_per_person)){
             res.json({uniqueCode:'0'})
         } else {
             console.log('from uc api')
