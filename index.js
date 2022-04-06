@@ -67,7 +67,7 @@ function preparefn(seqid, problemset){
     for(let i = start; i < end; i++){
         arr.push((i).toString());
     }
-    return res;
+    return arr;
 }
 
 app.get('/api/checkuser/:id', cors(), (req, res, next) => {
