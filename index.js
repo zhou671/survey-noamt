@@ -150,15 +150,16 @@ app.get('/api/makeselection/:id/:sid/:s/:pid', cors(), (req, res, next) =>{
         if(parseInt(results[0].seqid) > sid){
             res.send('ok');
         }
+        let nextid = (parseInt(req.params.sid) + 1).toString()
+        con.query(update_seqid, 
+            [nextid, req.params.id], (err, results, fields) =>{
+                con.query(insert_choice, 
+                    [req.params.id, req.params.pid, req.params.s], (err, results, fields) =>{}
+                );
+                res.send('ok');
+            }
+        );
     })
-    let nextid = (parseInt(req.params.sid) + 1).toString()
-    con.query(update_seqid, 
-        [nextid, req.params.id], (err, results, fields) =>{
-    });
-    con.query(insert_choice, 
-        [req.params.id, req.params.pid, req.params.s], (err, results, fields) =>{
-    });
-    res.send('ok');
 });
 
 app.get('/api/getuniquecode/:id', cors(), (req, res, next) =>{
