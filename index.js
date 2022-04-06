@@ -66,7 +66,7 @@ function preparefn(seqid, problemset){
     console.log(end - start)
     let arr = [];
     for(let i = start; i < end + 1; i++){
-        arr.push((i).toString());
+        arr.push((i % 10000).toString());
     }
     return arr;
 }
