@@ -114,6 +114,7 @@ app.get('/api/checkuser/:id', cors(), (req, res, next) => {
     })
 
     con.query(select_user_record, [req.params.id], (err, results, fields) =>{
+        console.log(results[0])
         let seqid = parseInt(results[0].seqid)
         let problemset = results[0].problemset
         let fn = preparefn(seqid, problemset)
