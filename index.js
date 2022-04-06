@@ -65,7 +65,7 @@ function preparefn(seqid, problemset){
     let end = problemset * 50;
     console.log(end - start)
     let arr = [];
-    for(let i = start; i < end; i++){
+    for(let i = start; i < end + 1; i++){
         arr.push((i).toString());
     }
     return arr;
