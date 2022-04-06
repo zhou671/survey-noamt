@@ -63,6 +63,7 @@ function takeFirst(){
 function preparefn(seqid, problemset){
     let start = (problemset - 1) * 50 + seqid;
     let end = problemset * 50;
+    console.log(end - start)
     let arr = [];
     for(let i = start; i < end; i++){
         arr.push((i).toString());
