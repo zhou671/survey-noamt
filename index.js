@@ -108,25 +108,34 @@ app.get('/api/checkuser/:id', cors(), (req, res, next) => {
             con.query(
                 insert_user_record, 
                 [req.params.id, unique_code],
-                (err, results, fields) => {}
+                (err, results, fields) => {
+                    con.query(select_user_record, [req.params.id], (err, results, fields) =>{
+                        let seqid = parseInt(results[0].seqid)
+                        let problemset = results[0].problemset
+                        let fn = preparefn(seqid, problemset)
+                        res.json(
+                            {
+                                nextId: results[0].seqid,
+                                fileName: fn,
+                                uniqueCode: results[0].uniqueCode
+                            }
+                        )
+                    })
+                }
             )
-        } 
+        } else {
+            let seqid = parseInt(results[0].seqid)
+            let problemset = results[0].problemset
+            let fn = preparefn(seqid, problemset)
+            res.json(
+                {
+                    nextId: results[0].seqid,
+                    fileName: fn,
+                    uniqueCode: results[0].uniqueCode
+                }
+            )
+        }
     })
-
-    con.query(select_user_record, [req.params.id], (err, results, fields) =>{
-        console.log(results[0])
-        let seqid = parseInt(results[0].seqid)
-        let problemset = results[0].problemset
-        let fn = preparefn(seqid, problemset)
-        res.json(
-            {
-                nextId: results[0].seqid,
-                fileName: fn,
-                uniqueCode: results[0].uniqueCode
-            }
-        )
-    })
-
 });
 
 app.get('/api/makeselection/:id/:sid/:s/:pid', cors(), (req, res, next) =>{
