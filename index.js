@@ -11,7 +11,7 @@ const update_seqid = 'UPDATE users.amt50 SET seqid = ? where workid = ?';
 const insert_choice = 'INSERT INTO users.choices50 (workid, pid, c) VALUES (?, ?, ?)';
 
 const total_tasks = 10000
-const task_num_per_person = 50
+const task_num_per_person = 55
 const pid_length = 5
 
 function numToString(num){
@@ -61,13 +61,23 @@ function takeFirst(){
 }
 
 function preparefn(seqid, problemset){
+    let base = (problemset - 1) * 50;
     let start = (problemset - 1) * 50 + seqid;
-    let end = problemset * 50;
+    let end = problemset * 50 + 5;
+    let baselines = ['b1', 'b2', 'b3', 'b4', 'b5'];
     console.log(end - start)
     let arr = [];
+    let subs = 0
     for(let i = start; i < end + 1; i++){
-        arr.push((i % 10000).toString());
+        let num = i - base;
+        if(num != 0 && num % 11 == 0){
+            arr.push(baselines[num / 11 - 1])
+            subs += 1;
+        } else {
+            arr.push(((i - subs) % 10000).toString());
+        }
     }
+
     return arr;
 }
 
