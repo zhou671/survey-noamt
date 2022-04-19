@@ -66,7 +66,7 @@ function preparefn(seqid, problemset){
     let baselines = ['b1', 'b2', 'b3', 'b4', 'b5'];
     let arr = [];
     let offset = 0;
-    for(let i = 0; i < total_tasks; i++){
+    for(let i = 0; i < task_num_per_person; i++){
         if(i % 11 == 0 && i != 0){
             offset += 1
         }
