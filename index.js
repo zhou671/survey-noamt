@@ -5,12 +5,12 @@ const app = express();
 const cors = require('cors');
 const uuidv4 = require("uuid/v4");
 
-const insert_user_record = 'INSERT INTO users.amt50 (workid, uniquecode, problemset) VALUES (?, ?, ((select count(*) from users.amt50 subquery) + 1) % 200)';
+const insert_user_record = 'INSERT INTO users.amt50 (workid, uniquecode, problemset) VALUES (?, ?, ((select count(*) from users.amt50 subquery) + 1) % 10)';
 const select_user_record = 'SELECT * FROM users.amt50 where workid = ?'
 const update_seqid = 'UPDATE users.amt50 SET seqid = ? where workid = ?';
 const insert_choice = 'INSERT INTO users.choices50 (workid, pid, c) VALUES (?, ?, ?)';
 
-const total_tasks = 10000
+const total_tasks = 500
 const task_num_per_person = 55
 const pid_length = 5
 
@@ -74,7 +74,7 @@ function preparefn(seqid, problemset){
             arr.push(baselines[num / 11 - 1])
             subs += 1;
         } else {
-            arr.push(((i - subs) % 10000).toString());
+            arr.push(((i - subs) % total_tasks).toString());
         }
     }
 
