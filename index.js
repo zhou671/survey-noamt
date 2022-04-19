@@ -142,7 +142,7 @@ app.get('/api/checkuser/:id', cors(), (req, res, next) => {
                 {
                     nextId: results[0].seqid,
                     fileName: fn,
-                    uniqueCode: results[0].uniqueCode
+                    uniqueCode: results[0].uniquecode
                 }
             )
         }
