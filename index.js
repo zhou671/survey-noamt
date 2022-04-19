@@ -65,14 +65,14 @@ function preparefn(seqid, problemset){
     let base = (problemset - 1) * 50;
     let baselines = ['b1', 'b2', 'b3', 'b4', 'b5'];
     let arr = [];
-    let offset = 0;
+    let offset = -1;
     for(let i = 0; i < task_num_per_person; i++){
         if(i % 11 == 0 && i != 0){
             offset += 1
         }
         if(i > seqid) {  
             if(i % 11 == 0 % i != 0){
-                arr.push(baselines[offset / 11 - 1])
+                arr.push(baselines[offset])
             } else {
                 arr.push(((i - offset + base) % total_tasks).toString());
             }
