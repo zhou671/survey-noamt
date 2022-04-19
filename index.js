@@ -4,6 +4,7 @@ const path = require('path');
 const app = express();
 const cors = require('cors');
 const uuidv4 = require("uuid/v4");
+const { kMaxLength } = require('buffer');
 
 const insert_user_record = 'INSERT INTO users.amt50 (workid, uniquecode, problemset) VALUES (?, ?, ((select count(*) from users.amt50 subquery) + 1) % 10)';
 const select_user_record = 'SELECT * FROM users.amt50 where workid = ?'
@@ -62,21 +63,22 @@ function takeFirst(){
 
 function preparefn(seqid, problemset){
     let base = (problemset - 1) * 50;
-    let start = (problemset - 1) * 50 + seqid;
-    let end = problemset * 50 + 5;
     let baselines = ['b1', 'b2', 'b3', 'b4', 'b5'];
-    console.log(end - start)
     let arr = [];
-    let subs = 0
-    for(let i = start; i < end + 1; i++){
-        let num = i - base;
-        if(num != 0 && num % 11 == 0){
-            arr.push(baselines[num / 11 - 1])
-            subs += 1;
-        } else {
-            arr.push(((i - subs) % total_tasks).toString());
+    let offset = 0;
+    for(let i = 0; i < total_tasks; i++){
+        if(i % 11 == 0 && i != 0){
+            offset += 1
+        }
+        if(i > seqid) {  
+            if(i % 11 == 0 % i != 0){
+                arr.push(baselines[offset / 11 - 1])
+            } else {
+                arr.push(((i - offset + base) % total_tasks).toString());
+            }
         }
     }
+
 
     return arr;
 }
