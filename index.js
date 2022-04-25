@@ -79,6 +79,8 @@ function preparefn(seqid, problemset){
         }
     }
 
+    console.log(arr)
+
 
     return arr;
 }
