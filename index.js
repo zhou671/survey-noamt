@@ -66,7 +66,7 @@ function preparefn(seqid, problemset){
     let baselines = ['b1', 'b2', 'b3', 'b4', 'b5'];
     let arr = [];
     let offset = -1;
-    for(let i = 0; i < task_num_per_person; i++){
+    for(let i = 0; i < task_num_per_person + 2; i++){
         if(i % 11 == 0){
             offset += 1
         }
@@ -159,6 +159,7 @@ app.get('/api/makeselection/:id/:sid/:s/:pid', cors(), (req, res, next) =>{
     console.log(req.params.sid);
     var sid = req.params.sid
     if(parseInt(req.params.sid) >= 55){
+        console.log("bad selection")
         res.send('ok');
     }
     con.query(select_user_record, [req.params.id], (err, results, fields)=>{
