@@ -73,15 +73,13 @@ function preparefn(seqid, problemset){
         if(i > seqid) {  
             if(i % 11 == 0 % i != 0){
                 arr.push(baselines[offset])
+                console.log(baselines[offset])
             } else {
                 arr.push(((i - offset + base) % total_tasks).toString());
+                console.log(((i - offset + base) % total_tasks).toString())
             }
         }
     }
-
-    console.log(arr)
-
-
     return arr;
 }
 
@@ -194,7 +192,7 @@ app.get('/api/getuniquecode/:id', cors(), (req, res, next) =>{
 
 app.get('/api/getfile/:filepath', cors(), (req, res, next) =>{
     root_path = "public/data_out";
-    console.log(req.params.filepath)
+    //console.log(req.params.filepath)
     res.sendFile(path.join(__dirname, root_path, req.params.filepath));
 });
 
