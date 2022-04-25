@@ -67,7 +67,7 @@ function preparefn(seqid, problemset){
     let arr = [];
     let offset = -1;
     for(let i = 0; i < task_num_per_person; i++){
-        if(i % 11 == 0 && i != 0){
+        if(i % 11 == 0){
             offset += 1
         }
         if(i > seqid) {  
@@ -156,7 +156,7 @@ app.get('/api/makeselection/:id/:sid/:s/:pid', cors(), (req, res, next) =>{
     console.log(req.params.s);
     console.log(req.params.sid);
     var sid = req.params.sid
-    if(parseInt(req.params.sid) >= 50){
+    if(parseInt(req.params.sid) >= 55){
         res.send('ok');
     }
     con.query(select_user_record, [req.params.id], (err, results, fields)=>{
