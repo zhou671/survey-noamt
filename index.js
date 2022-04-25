@@ -75,8 +75,8 @@ function preparefn(seqid, problemset){
                 arr.push(baselines[offset])
                 console.log(baselines[offset])
             } else {
-                arr.push(((i - offset + base) % total_tasks).toString());
-                console.log(((i - offset + base) % total_tasks).toString())
+                arr.push(((i - offset - 1 + base) % total_tasks).toString());
+                console.log(((i - offset - 1 + base) % total_tasks).toString())
             }
         }
     }
