@@ -6,7 +6,7 @@ const cors = require('cors');
 const uuidv4 = require("uuid/v4");
 const { kMaxLength } = require('buffer');
 
-//const insert_user_record = 'INSERT INTO test.amt50 (workid, uniquecode, problemset) VALUES (?, ?, ((select count(*) from test.amt50 subquery) + 1) % 1)';
+//const insert_user_record = 'INSERT INTO test.amt50 (workid, uniquecode, problemset) VALUES (?, ?, ((select count(*) from test.amt50 subquery) + 1) % 200)';
 const insert_user_record = 'INSERT INTO test.amt50 (workid, uniquecode, problemset) VALUES (?, ?, ((select count(*) from test.amt50 subquery) + 1) % 2)';
 const select_user_record = 'SELECT * FROM test.amt50 where workid = ?'
 const update_seqid = 'UPDATE test.amt50 SET seqid = ? where workid = ?';
@@ -64,7 +64,7 @@ function takeFirst(){
 }
 
 function preparefn(seqid, problemset){
-    let base = (problemset - 1) * 50;
+    let base = (problemset) * 50;
     let baselines = ['b1', 'b2', 'b3', 'b4', 'b5'];
     let arr = [];
     let offset = -1;
