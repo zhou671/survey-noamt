@@ -6,12 +6,13 @@ const cors = require('cors');
 const uuidv4 = require("uuid/v4");
 const { kMaxLength } = require('buffer');
 
-const insert_user_record = 'INSERT INTO test.amt50 (workid, uniquecode, problemset) VALUES (?, ?, ((select count(*) from test.amt50 subquery) + 1) % 10)';
+const insert_user_record = 'INSERT INTO test.amt50 (workid, uniquecode, problemset) VALUES (?, ?, ((select count(*) from test.amt50 subquery) + 1) % 1)';
 const select_user_record = 'SELECT * FROM test.amt50 where workid = ?'
 const update_seqid = 'UPDATE test.amt50 SET seqid = ? where workid = ?';
 const insert_choice = 'INSERT INTO test.choices50 (workid, pid, c) VALUES (?, ?, ?)';
+const insert_comment = 'INSERT INTO test.feedback (comment) VALUES (?)';
 
-const total_tasks = 500
+const total_tasks = 50
 const task_num_per_person = 55
 const pid_length = 5
 
@@ -195,6 +196,12 @@ app.get('/api/getfile/:filepath', cors(), (req, res, next) =>{
     //console.log(req.params.filepath)
     res.sendFile(path.join(__dirname, root_path, req.params.filepath));
 });
+
+app.get('/api/getcommet/:commet', cors(), (req, res, next) =>{
+    con.query(insert_comment, [res.params.commet], (err, results, fields) => {
+        res.send('ok')
+    })
+})
 
 app.use(express.static(path.join(__dirname, 'public/view')))
 
