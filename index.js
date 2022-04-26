@@ -199,7 +199,8 @@ app.get('/api/getfile/:filepath', cors(), (req, res, next) =>{
 });
 
 app.get('/api/getcommet/:commet', cors(), (req, res, next) =>{
-    con.query(insert_comment, [res.params.commet], (err, results, fields) => {
+    console.log(req.params.commet)
+    con.query(insert_comment, [req.params.commet], (err, results, fields) => {
         res.send('ok')
     })
 })
