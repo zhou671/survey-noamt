@@ -7,13 +7,13 @@ const uuidv4 = require("uuid/v4");
 const { kMaxLength } = require('buffer');
 
 //const insert_user_record = 'INSERT INTO test.amt50 (workid, uniquecode, problemset) VALUES (?, ?, ((select count(*) from test.amt50 subquery) + 1) % 200)';
-const insert_user_record = 'INSERT INTO test.amt50 (workid, uniquecode, problemset) VALUES (?, ?, ((select count(*) from test.amt50 subquery) + 1) % 2)';
-const select_user_record = 'SELECT * FROM test.amt50 where workid = ?'
-const update_seqid = 'UPDATE test.amt50 SET seqid = ? where workid = ?';
-const insert_choice = 'INSERT INTO test.choices50 (workid, pid, c) VALUES (?, ?, ?)';
-const insert_comment = 'INSERT INTO test.feedback (comment) VALUES (?)';
+const insert_user_record = 'INSERT INTO formal.amt50 (workid, uniquecode, problemset) VALUES (?, ?, ((select count(*) from formal.amt50 subquery) + 1) % 200)';
+const select_user_record = 'SELECT * FROM formal.amt50 where workid = ?'
+const update_seqid = 'UPDATE formal.amt50 SET seqid = ? where workid = ?';
+const insert_choice = 'INSERT INTO formal.choices50 (workid, pid, c) VALUES (?, ?, ?)';
+const insert_comment = 'INSERT INTO formal.feedback (comment) VALUES (?)';
 
-const total_tasks = 100
+const total_tasks = 10000
 const task_num_per_person = 55
 const pid_length = 5
 
