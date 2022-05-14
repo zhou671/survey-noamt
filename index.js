@@ -84,14 +84,16 @@ function preparefn(seqid, problemset){
                 break;
             }
             if(count % 11 == 0 && i != 0){
-                arr.push(baselines[Math.floor(count / 11)])
-                console.log(baselines[Math.floor(count / 11)])
+                offset += 1
+                arr.push(baselines[offset])
+                console.log(baselines[offset])
                 count += 1;
             }
             if(problem_set[i] == ite){
                 arr.push(i.toString())
                 console.log(i)
                 count += 1;
+                problem_set[i] += 1;
             }
 
         }
