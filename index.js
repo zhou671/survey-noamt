@@ -77,15 +77,15 @@ function preparefn(seqid, problemset){
     let baselines = ['b1', 'b2', 'b3', 'b4', 'b5'];
     let arr = [];
     let offset = -1;
-    let count = 1
+    let count = seqid + 1
     for(let ite = 0; ite < 6; ite++){
         for(let i = 0; i < 10000; i++){
             if(count == 56){
                 break;
             }
             if(count % 11 == 0 && i != 0){
-                arr.push(baselines[offset])
-                console.log(baselines[offset])
+                arr.push(baselines[Math.floor(count / 11)])
+                console.log(baselines[Math.floor(count / 11)])
                 count += 1;
             }
             if(problem_set[i] == ite){
