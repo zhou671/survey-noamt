@@ -85,8 +85,8 @@ function preparefn(seqid, problemset){
             }
             if(count % 11 == 0 && i != 0){
                 offset += 1
-                arr.push(baselines[offset])
-                console.log(baselines[offset])
+                arr.push(baselines[Math.floor(count / 11) - 1])
+                console.log(baselines[Math.floor(count / 11) - 1])
                 count += 1;
             }
             if(problem_set[i] == ite){
