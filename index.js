@@ -83,7 +83,7 @@ function preparefn(seqid, problemset){
             if(count == 56){
                 break;
             }
-            if(count % 11 == 0 && i != 0){
+            if(count % 11 == 0 && count != 0){
                 offset += 1
                 arr.push(baselines[offset])
                 console.log(baselines[offset])
