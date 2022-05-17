@@ -85,13 +85,14 @@ function preparefn(seqid, problemset){
             }
             if(count % 11 == 0 && count != 0){
                 offset += 1
+                console.log('offset: ' + offset)
                 arr.push(baselines[offset])
                 console.log(baselines[offset])
                 count += 1;
             }
             if(problem_set[i] == ite){
                 arr.push(i.toString())
-                console.log(i)
+                console.log(i.toString())
                 count += 1;
                 problem_set[i] += 1;
             }
