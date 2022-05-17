@@ -77,31 +77,27 @@ function preparefn(seqid, problemset){
     let baselines = ['b1', 'b2', 'b3', 'b4', 'b5'];
     let arr = [];
     let offset = -1;
-    if(seqid == 55){
-        return arr;
-    }
-    let count = seqid + 1
+    let count = seqid + 1;
     for(let ite = 0; ite < 6; ite++){
+        if(count == 56){
+            break;
+        }
         for(let i = 0; i < 10000; i++){
             if(count == 56){
                 break;
             }
             if(count % 11 == 0){
                 offset += 1
-                console.log('offset: ' + offset)
+                //console.log('offset: ' + offset)
                 arr.push(baselines[offset])
-                console.log(baselines[offset])
+                //console.log(baselines[offset])
                 count += 1;
             } else if (problem_set[i] == ite){
                 arr.push(i.toString())
-                console.log(i.toString())
+                //console.log(i.toString())
                 count += 1;
                 problem_set[i] += 1;
             }
-
-        }
-        if(count == 56){
-            break;
         }
     }
     arr.push('b1')
