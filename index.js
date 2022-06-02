@@ -20,12 +20,12 @@ const total_tasks = 100
 const task_num_per_person = 55
 const pid_length = 5
 
-const problem_set = new Array(100);
-var good_list = {}
+// const problem_set = new Array(100);
+// var good_list = {}
 
-for(var i = 0; i < 100; i++){
-	problem_set[i] = 0;
-}
+// for(var i = 0; i < 100; i++){
+// 	problem_set[i] = 0;
+// }
 
 function numToString(num){
     var str_len = num.length
