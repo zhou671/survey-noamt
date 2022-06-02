@@ -107,7 +107,7 @@ function preparefn(seqid, problemset){
     let base = problemset * 50;
     let baselines = ['b1', 'b2', 'b3', 'b4', 'b5']
     let arr = []
-    let offset = 0;
+    let offset = -1;
     for(let i = 0; i < 55; i++){
         if((i + 1) % 11 == 0){
             offset += 1
@@ -118,7 +118,7 @@ function preparefn(seqid, problemset){
         if((i + 1) % 11 == 0){
             arr.push(baselines[offset])
         } else {
-            arr.push((base + i - offset).toString())
+            arr.push((base + i - offset - 1).toString())
         }
     }
     console.log(arr)
