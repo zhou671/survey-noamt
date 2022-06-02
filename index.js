@@ -234,7 +234,7 @@ app.get('/api/getuniquecode/:id', cors(), (req, res, next) =>{
 })
 
 app.get('/api/getfile/:filepath', cors(), (req, res, next) =>{
-    root_path = "public/data_out";
+    root_path = "public/ABC";
     //console.log(req.params.filepath)
     res.sendFile(path.join(__dirname, root_path, req.params.filepath));
 });
